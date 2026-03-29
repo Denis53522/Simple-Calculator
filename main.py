@@ -41,7 +41,7 @@ if __name__ == "__main__":
                 operation = "*"
             elif operation == "4":
                 if first_number == 0 or second_number == 0:
-                    print("Cannot divide by zero")
+                    print("Cannot divide by zero. Please try again.")
                     continue
                 result = Simple_Calculator().division(first_number,second_number)
                 operation = "/"
