@@ -26,6 +26,7 @@ if __name__ == "__main__":
             second_number = float(input("Enter second number: ")) # Getting second number from user
             operation = input("\n=== Operations ===\n1.) Addition\n2.) Subtraction\n3.) Multiplication\n4.) Division\nEnter operation: ") # Getting operation from user
 
+            # Checking if the numbers are integers
             if first_number.is_integer():
                 first_number = int(first_number)
             if second_number.is_integer():
@@ -40,9 +41,6 @@ if __name__ == "__main__":
                 result = calculator.multiplication(first_number,second_number)
                 operation = "*"
             elif operation == "4":
-                if first_number == 0 or second_number == 0:
-                    print("Cannot divide by zero. Please try again.")
-                    continue
                 result = Simple_Calculator().division(first_number,second_number)
                 operation = "/"
             else:
@@ -65,3 +63,5 @@ if __name__ == "__main__":
                 print("Invalid response must be (yes/no) or (y/n)")
         except ValueError:
             print("Invalid input must be a number")
+        except ZeroDivisionError:
+            print("Cannot divide by zero. Please try again.")
